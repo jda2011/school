@@ -36,12 +36,13 @@ const buttonStyle = {
   backgroundColor: '#0284c7',
   color: '#fff',
 
-  'use client';
+'use client';
 
 export default function Home() {
-  return <h1>🚀 미래공학 학급 홈페이지</h1>;
+  return (
+    <div style={{ padding: '40px', textAlign: 'center', backgroundColor: '#0f172a', color: '#fff', minHeight: '100vh' }}>
+      <h1>🚀 미래공학 학급 홈페이지</h1>
+      <p>웹사이트가 성공적으로 배포되었습니다!</p>
+    </div>
+  );
 }
-  borderRadius: '6px',
-  textDecoration: 'none',
-  fontWeight: 'bold'
-};
