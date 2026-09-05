@@ -35,6 +35,12 @@ const buttonStyle = {
   padding: '12px 24px',
   backgroundColor: '#0284c7',
   color: '#fff',
+
+  'use client';
+
+export default function Home() {
+  return <h1>🚀 미래공학 학급 홈페이지</h1>;
+}
   borderRadius: '6px',
   textDecoration: 'none',
   fontWeight: 'bold'
