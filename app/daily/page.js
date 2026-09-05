@@ -12,7 +12,6 @@ export default function Daily() {
   const badWords = ['비난', '욕설'];
 
   useEffect(() => {
-    // 브라우저 환경인지 확인 후 confirm 창 실행
     if (typeof window !== 'undefined') {
       const confirmAdmin = window.confirm('관리자 권한을 허용하시겠습니까?');
       if (confirmAdmin) {
@@ -40,6 +39,8 @@ export default function Daily() {
       }
       return;
     }
+
+    if (!inputText.trim()) return;
 
     setPosts([...posts, { text: inputText, id: Date.now() }]);
     setInputText('');
