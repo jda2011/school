@@ -9,14 +9,15 @@ export default function Daily() {
   const [posts, setPosts] = useState([]);
   const [inputText, setInputText] = useState('');
 
-  // 비속어 필터링 예시 (실제 구현 시 확장 필요)
   const badWords = ['비난', '욕설'];
 
   useEffect(() => {
-    // 초대 링크 접속 시 관리자 권한 확인 모달
-    const confirmAdmin = confirm('관리자 권한을 허용하시겠습니까?');
-    if (confirmAdmin) {
-      setIsAdmin(true);
+    // 브라우저 환경인지 확인 후 confirm 창 실행
+    if (typeof window !== 'undefined') {
+      const confirmAdmin = window.confirm('관리자 권한을 허용하시겠습니까?');
+      if (confirmAdmin) {
+        setIsAdmin(true);
+      }
     }
   }, []);
 
@@ -64,7 +65,7 @@ export default function Daily() {
           value={inputText} 
           onChange={(e) => setInputText(e.target.value)}
           placeholder="하고 싶은 말을 적어주세요."
-          style={{ width: '300px', padding: '8px', marginRight: '10px' }}
+          style={{ width: '300px', padding: '8px', marginRight: '10px', color: '#000' }}
         />
         <button onClick={handlePostSubmit} style={{ padding: '8px 16px' }}>글 등록</button>
       </div>
